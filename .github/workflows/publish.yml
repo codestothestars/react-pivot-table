@@ -1,0 +1,41 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 14.7
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@codestothestars'
+
+    - name: Configure GitHub Packages authentication
+      run: npm config set //npm.pkg.github.com/:_authToken ${{ secrets.CODESTOTHESTARS_GITHUB_TOKEN }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Create tag for package version
+      uses: pkgdeps/action-package-version-to-git-tag@v1
+      with:
+        git_commit_sha: ${{ github.sha }}
+        git_tag_prefix: v
+        github_repo: ${{ github.repository }}
+        github_token: ${{ secrets.CODESTOTHESTARS_GITHUB_TOKEN }}
+
+    - env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      name: Publish package
+      run: npm publish
+
+name: Publish to GitHub Packages
+
+on:
+  push:
+    branches:
+      - master
+
+    tags:
+      - "!*"
