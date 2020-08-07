@@ -45,6 +45,15 @@ This repository includes a bare-bones demo app using [react-scripts](https://www
 npm start
 ```
 
+### Architectural Overview
+Architectural overview goes here.
+
+### Assumptions
+Assumptions go here.
+
+### Next Steps
+Next steps go here.
+
 ### Contributing
 Before committing changes, make sure that you...
 1. Write/edit [JSDoc](https://jsdoc.app) documentation for all new/modified members.
