@@ -1,0 +1,9 @@
+.DS_Store
+.env.*.local
+.vscode
+build
+coverage
+lib
+node_modules
+npm-debug.log*
+src/react-app-env.d.ts

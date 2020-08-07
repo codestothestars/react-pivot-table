@@ -1,0 +1,146 @@
+{
+    "extends": [
+        "eslint:all",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react/all",
+        "react-app"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "*.test.tsx"
+            ],
+            "rules": {}
+        },
+        {
+            "files": [
+                "react-app-env.d.ts"
+            ],
+            "rules": {
+                "spaced-comment": "off"
+            }
+        }
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "import",
+        "jsdoc",
+        "jsx-a11y",
+        "react"
+    ],
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/typedef": [
+            "error",
+            {
+                "variableDeclaration": true
+            }
+        ],
+        "func-style": [
+            "error",
+            "declaration"
+        ],
+        "function-call-argument-newline": [
+            "error",
+            "consistent"
+        ],
+        "function-paren-newline": [
+            "error",
+            "consistent"
+        ],
+        "import/order": [
+            "error",
+            {
+                "alphabetize": {
+                    "order": "asc"
+                },
+                "groups": [
+                    [
+                        "builtin",
+                        "external",
+                        "internal"
+                    ],
+                    "parent",
+                    [
+                        "index",
+                        "sibling"
+                    ]
+                ]
+            }
+        ],
+        "indent": [
+            "error",
+            2
+        ],
+        "jsdoc/require-description": "error",
+        "jsdoc/require-jsdoc": "error",
+        "jsdoc/require-param": "error",
+        "jsdoc/require-param-description": "error",
+        "jsdoc/require-returns": [
+            "error",
+            {
+                "forceReturnsWithAsync": true
+            }
+        ],
+        "jsdoc/require-returns-description": "error",
+        "jsx-quotes": [
+            "error",
+            "prefer-single"
+        ],
+        "no-extra-semi": "error",
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "one-var": [
+            "error",
+            "never"
+        ],
+        "padded-blocks": [
+            "error",
+            "never"
+        ],
+        "quote-props": [
+            "error",
+            "consistent-as-needed"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [
+                    ".tsx"
+                ]
+            }
+        ],
+        "react/jsx-indent": [
+            "error",
+            2
+        ],
+        "react/jsx-indent-props": [
+            "error",
+            2
+        ],
+        "react/jsx-max-depth": "off",
+        "react/jsx-max-props-per-line": "off",
+        "react/jsx-no-literals": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/require-optimization": "off",
+        "semi": "error",
+        "sort-imports": "off",
+        "space-before-function-paren": [
+            "error",
+            {
+                "named": "never"
+            }
+        ]
+    }
+}

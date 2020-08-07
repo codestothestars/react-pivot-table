@@ -1,0 +1,74 @@
+{
+  "author": "Ariel Oak",
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/codestothestars/react-pivot-table/issues"
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "description": "Configurable pivot table as a React component.",
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.11.2",
+    "@testing-library/react": "10.4.8",
+    "@testing-library/user-event": "12.1.0",
+    "@types/jest": "24.9.1",
+    "@types/node": "14.0.27",
+    "@types/react": "16.9.44",
+    "@types/react-dom": "16.9.8",
+    "create-react-app": "3.4.1",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-jsdoc": "30.2.1",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-react": "7.20.5",
+    "fibers": "5.0.0",
+    "node-sass": "4.14.1",
+    "react-scripts": "3.4.1",
+    "sass": "1.26.10",
+    "typescript": "3.9.7"
+  },
+  "files": [
+    "lib/**/*.d.ts",
+    "lib/**/*.js"
+  ],
+  "homepage": "https://github.com/codestothestars/react-pivot-table#readme",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts*",
+      "!src/index.tsx",
+      "!src/serviceWorker.ts"
+    ]
+  },
+  "keywords": [
+    "pivot",
+    "react",
+    "table"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "@codestothestars/react-pivot-table",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codestothestars/react-pivot-table.git"
+  },
+  "scripts": {
+    "build": "tsc --project src/tsconfig.dist.json",
+    "eject": "react-scripts eject",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "version": "0.0.0"
+}
