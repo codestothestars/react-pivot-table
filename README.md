@@ -9,3 +9,7 @@ npm config set @codestothestars:registry https://npm.pkg.github.com
 
 npm install @codestothestars/react-pivot-table
 ```
+
+## Development
+### Dependencies
+* [Node.js](https://nodejs.org) 14.7
