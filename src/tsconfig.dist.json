@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "noEmit": false,
+    "outDir": "../lib"
+  },
+  "extends": "../tsconfig.json",
+  "files": [
+    "index.ts"
+  ],
+  "include": []
+}
