@@ -12,13 +12,40 @@ npm install @codestothestars/react-pivot-table
 
 ## Usage
 ```JSX
-import PivotTable from '@codestothestars/react-pivot-table';
+import PivotTable, { aggregators } from '@codestothestars/react-pivot-table';
 import React from 'react';
 
 export default function MyComponent() {
-    return (
-        <PivotTable />
-    );
+  const data = [
+    {category: 'Furniture', sales: 261.96, state: 'Kentucky', subCategory: 'Bookcases'},
+    {category: 'Furniture', sales: 731.94, state: 'Kentucky', subCategory: 'Chairs'},
+    {category: 'Office Supplies', sales: 14.62, state: 'California', subCategory: 'Labels'}
+  ];
+
+  const columnDimensions = [
+    { name: 'State', property: 'state' }
+  ];
+
+  const rowDimensionss = [
+    { name: 'Category', property: 'category' },
+    { name: 'Sub-Category', property: 'subCategory' }
+  ];
+
+  const title = {
+    column: 'States',
+    row: 'Products'
+  };
+
+  return (
+    <PivotTable
+      aggregator={aggregators.sum}
+      columnDimensions={columnDimensions}
+      data={data}
+      metric='sales'
+      rowDimensions={rowDimensionss}
+      title={title}
+    />
+  );
 }
 ```
 
