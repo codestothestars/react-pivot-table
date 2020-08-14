@@ -1,0 +1,42 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+$section-padding: $table-base-padding;
+
+.row {
+  color: rgb(78, 82, 85);
+
+  td {
+    @include padding-vertical($table-base-padding / 4);
+  }
+
+  th {
+    font-weight: normal;
+
+    &:first-child {
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+.sectionFirst {
+  &:first-child {
+    td,
+    th {
+      padding-top: $section-padding;
+    }
+  }
+
+  td,
+  th {
+    padding-top: $section-padding * 2;
+  }
+}
+
+.sectionLast {
+  td,
+  th {
+    padding-bottom: $section-padding;
+  }
+}
