@@ -3,6 +3,7 @@
         "eslint:all",
         "plugin:jsx-a11y/recommended",
         "plugin:react/all",
+        "plugin:@typescript-eslint/all",
         "react-app"
     ],
     "overrides": [
@@ -10,7 +11,9 @@
             "files": [
                 "*.test.tsx"
             ],
-            "rules": {}
+            "rules": {
+                "jsdoc/require-jsdoc": "off"
+            }
         },
         {
             "files": [
@@ -24,7 +27,8 @@
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        "project": "tsconfig.json"
     },
     "plugins": [
         "import",
@@ -33,13 +37,69 @@
         "react"
     ],
     "rules": {
-        "@typescript-eslint/explicit-function-return-type": "error",
-        "@typescript-eslint/no-explicit-any": "error",
-        "@typescript-eslint/typedef": [
+        "@typescript-eslint/array-type": [
             "error",
             {
-                "variableDeclaration": true
+                "default": "array-simple"
             }
+        ],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/indent": [
+            "error",
+            2
+        ],
+        "@typescript-eslint/member-ordering": "off",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-extra-parens": [
+            "error",
+            "all",
+            {
+                "ignoreJSX": "multi-line"
+            }
+        ],
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-invalid-this": "off",
+        "@typescript-eslint/no-magic-numbers": [
+            "error",
+            {
+                "ignore": [
+                    0,
+                    1
+                ]
+            }
+        ],
+        "@typescript-eslint/no-type-alias": [
+            "error",
+            {
+                "allowAliases": "always",
+                "allowLiterals": "in-intersections"
+            }
+        ],
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars-experimental": "off",
+        "@typescript-eslint/prefer-readonly-parameter-types": "off",
+        "@typescript-eslint/quotes": [
+            "error",
+            "single"
+        ],
+        "@typescript-eslint/space-before-function-paren": [
+            "error",
+            {
+                "named": "never"
+            }
+        ],
+        "@typescript-eslint/typedef": "off",
+        "array-bracket-newline": [
+            "error",
+            "consistent"
+        ],
+        "array-element-newline": [
+            "error",
+            "consistent"
+        ],
+        "arrow-parens": [
+            "error",
+            "as-needed"
         ],
         "func-style": [
             "error",
@@ -53,10 +113,13 @@
             "error",
             "consistent"
         ],
+        "id-length": "off",
+        "implicit-arrow-linebreak": "off",
         "import/order": [
             "error",
             {
                 "alphabetize": {
+                    "caseInsensitive": true,
                     "order": "asc"
                 },
                 "groups": [
@@ -73,13 +136,36 @@
                 ]
             }
         ],
-        "indent": [
+        "indent": "off",
+        "jsdoc/require-description": [
             "error",
-            2
+            {
+                "contexts": [
+                    "any"
+                ]
+            }
         ],
-        "jsdoc/require-description": "error",
-        "jsdoc/require-jsdoc": "error",
-        "jsdoc/require-param": "error",
+        "jsdoc/require-description-complete-sentence": "error",
+        "jsdoc/require-jsdoc": [
+            "error",
+            {
+                "contexts": [
+                    "ClassProperty",
+                    "TSInterfaceDeclaration",
+                    "TSPropertySignature"
+                ],
+                "require": {
+                    "ClassDeclaration": true,
+                    "MethodDefinition": true
+                }
+            }
+        ],
+        "jsdoc/require-param": [
+            "error",
+            {
+                "checkDestructured": false
+            }
+        ],
         "jsdoc/require-param-description": "error",
         "jsdoc/require-returns": [
             "error",
@@ -92,10 +178,38 @@
             "error",
             "prefer-single"
         ],
+        "lines-around-comment": [
+            "error",
+            {
+                "allowBlockStart": true,
+                "ignorePattern": "^\\*"
+            }
+        ],
+        "multiline-ternary": [
+            "error",
+            "always-multiline"
+        ],
+        "no-extra-parens": "off",
         "no-extra-semi": "error",
+        "no-invalid-this": "off",
+        "no-magic-numbers": "off",
+        "no-plusplus": [
+            "error",
+            {
+                "allowForLoopAfterthoughts": true
+            }
+        ],
+        "no-ternary": "off",
+        "no-undefined": "off",
         "object-curly-spacing": [
             "error",
             "always"
+        ],
+        "object-property-newline": [
+            "error",
+            {
+                "allowAllPropertiesOnSameLine": true
+            }
         ],
         "one-var": [
             "error",
@@ -109,10 +223,7 @@
             "error",
             "consistent-as-needed"
         ],
-        "quotes": [
-            "error",
-            "single"
-        ],
+        "quotes": "off",
         "react/jsx-filename-extension": [
             "error",
             {
@@ -133,14 +244,14 @@
         "react/jsx-max-props-per-line": "off",
         "react/jsx-no-literals": "off",
         "react/jsx-one-expression-per-line": "off",
+        "react/no-set-state": "off",
         "react/require-optimization": "off",
+        "react/state-in-constructor": [
+            "error",
+            "never"
+        ],
         "semi": "error",
         "sort-imports": "off",
-        "space-before-function-paren": [
-            "error",
-            {
-                "named": "never"
-            }
-        ]
+        "space-before-function-paren": "off"
     }
 }
