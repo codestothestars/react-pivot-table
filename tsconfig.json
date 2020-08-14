@@ -14,12 +14,14 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "noEmit": true,
+    "noUnusedLocals": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "ES5"
   },
   "include": [
-    "src"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ]
 }

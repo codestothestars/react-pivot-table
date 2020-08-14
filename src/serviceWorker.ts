@@ -1,4 +1,4 @@
-/* eslint-disable capitalized-comments, max-len, multiline-comment-style, no-console, no-eq-null, no-extra-parens, no-process-env */
+/* eslint-disable */
 
 const isLocalhost: boolean = Boolean(
   window.location.hostname === 'localhost' ||
@@ -24,7 +24,7 @@ export function register(config?: Config): void {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl: URL = new URL(
-      process.env.PUBLIC_URL,
+      process.env.PUBLIC_URL as string,
       window.location.href
     );
     if (publicUrl.origin !== window.location.origin) {

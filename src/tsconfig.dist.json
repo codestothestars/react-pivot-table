@@ -6,7 +6,8 @@
   },
   "extends": "../tsconfig.json",
   "files": [
-    "index.ts"
+    "lib.ts",
+    "react-app-env.d.ts"
   ],
   "include": []
 }

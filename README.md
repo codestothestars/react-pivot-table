@@ -12,13 +12,40 @@ npm install @codestothestars/react-pivot-table
 
 ## Usage
 ```JSX
-import PivotTable from '@codestothestars/react-pivot-table';
+import PivotTable, { aggregators } from '@codestothestars/react-pivot-table';
 import React from 'react';
 
 export default function MyComponent() {
-    return (
-        <PivotTable />
-    );
+  const data = [
+    {category: 'Furniture', sales: 261.96, state: 'Kentucky', subCategory: 'Bookcases'},
+    {category: 'Furniture', sales: 731.94, state: 'Kentucky', subCategory: 'Chairs'},
+    {category: 'Office Supplies', sales: 14.62, state: 'California', subCategory: 'Labels'}
+  ];
+
+  const columnDimensions = [
+    { name: 'State', property: 'state' }
+  ];
+
+  const rowDimensionss = [
+    { name: 'Category', property: 'category' },
+    { name: 'Sub-Category', property: 'subCategory' }
+  ];
+
+  const title = {
+    column: 'States',
+    row: 'Products'
+  };
+
+  return (
+    <PivotTable
+      aggregator={aggregators.sum}
+      columnDimensions={columnDimensions}
+      data={data}
+      metric='sales'
+      rowDimensions={rowDimensionss}
+      title={title}
+    />
+  );
 }
 ```
 
@@ -46,13 +73,34 @@ npm start
 ```
 
 ### Architectural Overview
-Architectural overview goes here.
+The following attributes of the table are determined upfront.
+* The column dimension values.
+* All possible combinations of row dimension values.
+* The pivoted data for the individual primary table cells (i.e. all cells except those in the "total" rows).
 
-### Assumptions
-Assumptions go here.
+The pivoted data rows are then passed and filtered down to nested subsections, which are created recursively until all of the row dimension values are represented. This nesting facilitates the potential implementation of collapsible sections beyond the first row dimension. The dataset is similarly filtered and provided to the "total" rows, which calculate their values separately.
+
+This library currently provides a default "sum" aggregator. Aggregation is implemented generically, so the user may also specify their own aggregator, and more default functions can easily be added. The independent operation of "total" rows facilitates more complex aggregations requiring the entire dataset for accuracy, such as averages. Aggregators specify a default value (e.g. `0` for sum), and the pivot table will not render rows containing only the default.
+
+When expand/collapse buttons are clicked, callbacks provided by ancestor components are fired, and the open/closed state of the section is managed exclusively by the top-level section component.
+
+### Assumptions and Simplifications
+1. Only one column dimension is initially supported.
+1. Row dimensions are collapsible only at top level.
+1. Dimension value order is undefined.
+1. "Total" rows are supported. Total columns are not.
+1. Only the first row dimension gets a total row.
+1. Numbers are rounded to the nearest whole number.
+1. Column dimension title is left-aligned.
+1. No chevrons in column dimension title.
+1. Internet Explorer is not supported.
 
 ### Next Steps
-Next steps go here.
+* Fully unit test
+* Ensure component displays well when embedded within an existing app.
+* Implement sticky row dimensions.
+* Enable "total rows" for all row dimensions.
+* Implement "total columns".
 
 ### Contributing
 Before committing changes, make sure that you...

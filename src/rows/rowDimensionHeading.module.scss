@@ -1,0 +1,13 @@
+@import '../styles/variables';
+
+.rowDimensionHeading {
+  padding-right: $table-base-padding / 2;
+  text-align: left;
+}
+
+.rowDimensionLastHeading {
+  border-right: {
+    style: solid;
+    width: 1px;
+  }
+}
