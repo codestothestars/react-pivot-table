@@ -1,0 +1,15 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+$background: rgb(51, 51, 51);
+
+.totalRow {
+  background: $background;
+  color: white;
+  font-weight: bold;
+
+  td,
+  th {
+    @include padding-vertical($table-base-padding * .75);
+  }
+}
