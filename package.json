@@ -57,7 +57,7 @@
     "table"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/lib.js",
   "name": "@codestothestars/react-pivot-table",
   "repository": {
     "type": "git",
