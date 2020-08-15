@@ -1,10 +1,10 @@
 import React from 'react';
 import Body from './Body';
 import { getDimensionValues } from './dimensions';
-import Head from './head/Head';
+import { Head } from './head';
 import styles from './PivotTable.module.scss';
 import { PivotTableProps } from './PivotTableProps';
-import TotalRow from './rows/TotalRow';
+import { TotalRow } from './rows';
 
 /**
  * A pivot table for a specified dataset.
