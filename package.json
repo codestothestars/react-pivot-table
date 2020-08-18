@@ -41,8 +41,10 @@
     "typescript": "3.9.7"
   },
   "files": [
+    "lib/**/*.css",
     "lib/**/*.d.ts",
-    "lib/**/*.js"
+    "lib/**/*.js",
+    "lib/**/*.scss"
   ],
   "homepage": "https://github.com/codestothestars/react-pivot-table#readme",
   "jest": {
