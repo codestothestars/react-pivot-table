@@ -21,9 +21,11 @@ export default function Heading<T>(props: HeadingProps<T>): JSX.Element {
 
   const [column] = columnDimensions;
 
-  const columnCells = column.values.map(String).map(
-    value => <th className={columnCell} key={value}>{value}</th>
-  );
+  const columnCells = column.values.length > 0
+    ? column.values.map(String).map(
+      value => <th className={columnCell} key={value}>{value}</th>
+    )
+    : <th />;
 
   const rowCells = rowDimensions.map(({ dimension }, i) => {
     const last = i === rowDimensions.length - 1;
