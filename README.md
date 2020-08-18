@@ -96,7 +96,6 @@ When expand/collapse buttons are clicked, callbacks provided by ancestor compone
 1. Internet Explorer is not supported.
 
 ### Next Steps
-* Fully unit test
 * Ensure component displays well when embedded within an existing app.
 * Implement sticky row dimensions.
 * Enable "total rows" for all row dimensions.

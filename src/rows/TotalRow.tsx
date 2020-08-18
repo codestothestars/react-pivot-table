@@ -27,17 +27,19 @@ export default function TotalRow<T, M extends keyof T>(
 
   const columnProperty = column.dimension.property;
 
-  const columnCells = column.values.map(val => {
-    const columnData = data.filter(record => record[columnProperty] === val);
+  const columnCells = column.values.length > 0
+    ? column.values.map(val => {
+      const columnData = data.filter(record => record[columnProperty] === val);
 
-    const value = aggregate(columnData, metric, aggregator);
+      const value = aggregate(columnData, metric, aggregator);
 
-    return (
-      <td className={columnCellStyles.columnCell} key={String(val)}>
-        {value}
-      </td>
-    );
-  });
+      return (
+        <td className={columnCellStyles.columnCell} key={String(val)}>
+          {value}
+        </td>
+      );
+    })
+    : <td />;
 
   return (
     <tr className={styles.totalRow}>

@@ -47,9 +47,18 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.ts*",
+      "!src/app/*.ts*",
       "!src/index.tsx",
       "!src/serviceWorker.ts"
-    ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "keywords": [
     "pivot",
@@ -67,8 +76,9 @@
     "build": "tsc --project src/tsconfig.dist.json",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.ts*\"",
+    "prepare": "npm run build",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test --env=jsdom-fourteen"
   },
-  "version": "0.0.0"
+  "version": "0.0.1"
 }

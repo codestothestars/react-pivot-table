@@ -30,7 +30,7 @@ export function getRowLabelCells(
 
     if (visible) {
       content = i === 0 && onCollapse !== undefined
-        ? <CollapseButton label={label} onToggle={onCollapse} />
+        ? <CollapseButton enabled label={label} onToggle={onCollapse} />
         : label;
     } else {
       content = <>&nbsp;</>;

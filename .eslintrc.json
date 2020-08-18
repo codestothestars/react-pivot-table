@@ -12,7 +12,18 @@
                 "*.test.tsx"
             ],
             "rules": {
-                "jsdoc/require-jsdoc": "off"
+                "@typescript-eslint/init-declarations": "off",
+                "@typescript-eslint/no-magic-numbers": "off",
+                "jsdoc/require-jsdoc": "off",
+                "max-len": [
+                    "error",
+                    {
+                        "ignorePattern": "^\\s*(describe|test)"
+                    }
+                ],
+                "max-lines": "off",
+                "max-lines-per-function": "off",
+                "max-statements": "off"
             }
         },
         {
