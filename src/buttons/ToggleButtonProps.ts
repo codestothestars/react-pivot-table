@@ -8,7 +8,7 @@ export interface ToggleButtonProps {
    * If disabled, the button is rendered as a non-interactable, plain text
    * label.
    */
-  enabled?: boolean;
+  enabled: boolean;
 
   /**
    * The icon to display in the button.

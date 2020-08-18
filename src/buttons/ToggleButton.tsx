@@ -29,7 +29,7 @@ export default class ToggleButton extends React.Component<ToggleButtonProps> {
    * @returns The rendered toggle button.
    */
   public render(): JSX.Element {
-    const { enabled = true, icon, label } = this.props;
+    const { enabled, icon, label } = this.props;
 
     const { handleToggle } = this;
 

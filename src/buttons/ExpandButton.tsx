@@ -10,7 +10,7 @@ import { ToggleButtonProps } from './ToggleButtonProps';
  * @returns The rendered expand button.
  */
 export default function ExpandButton(props: ToggleButtonProps): JSX.Element {
-  const { enabled = true, label, onToggle } = props;
+  const { enabled, label, onToggle } = props;
 
   return (
     <ToggleButton
