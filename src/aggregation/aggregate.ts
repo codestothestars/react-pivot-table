@@ -19,9 +19,11 @@ export function aggregate<T, M extends keyof T>(
   metric: M,
   aggregator: Aggregator<T[M]>
 ): string {
-  const value = data
-    .map(record => record[metric])
-    .reduce(aggregator.aggregate, aggregator.default);
+  const value = data.length > 0
+    ? data
+      .map(record => record[metric])
+      .reduce(aggregator.aggregate)
+    : aggregator.default;
 
   return finishAggregate(value);
 }
