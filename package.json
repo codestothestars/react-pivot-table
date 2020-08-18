@@ -85,5 +85,5 @@
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom-fourteen"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
