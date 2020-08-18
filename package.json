@@ -16,8 +16,8 @@
     "url": "https://github.com/codestothestars/react-pivot-table/issues"
   },
   "dependencies": {
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "description": "Configurable pivot table as a React component.",
   "devDependencies": {
